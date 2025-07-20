@@ -188,3 +188,26 @@ h2 {
   margin-top: 0.5rem;
   line-height: 1.5;
 }
+
+#project-filters {
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+#project-filters button {
+  padding: 0.4rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  background-color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+#project-filters button.active {
+  background-color: black;
+  color: white;
+  border-color: black;
+}

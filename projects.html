@@ -22,45 +22,65 @@
     <!-- Page-specific content -->
     <div id="content-container">
         <h2>Projects</h2>
+        <div id="project-filters">
+            <button data-filter="all" class="active">All</button>
+            <button data-filter="web">Web App</button>
+            <button data-filter="data">Data</button>
+            <button data-filter="algorithms">Algorithms</button>
+            <button data-filter="product">Product</button>
+        </div>
+
         <div id="projects-grid">
 
-        <a href="https://your-zen-project-link.com" target="_blank" class="project-card">
+        <a href="#" target="_blank" class="project-card" data-category="web">
             <h3>Zen <span class="subtitle">– AI-powered Digital Journaling App</span></h3>
             <div class="tags">
             <span>Figma</span><span>MongoDB</span><span>Express.js</span><span>React</span><span>Node.js</span><span>OpenAI Whisper</span>
             </div>
-            <p>
-            Developed an end-to-end journaling platform supporting multimodal input to extract emotional tones and offer mindfulness prompts using JWT-based auth, scalable MongoDB, and responsive UI.
-            </p>
+            <p>An end-to-end project of a journaling platform that supports multimodal input to extract emotional tones and offer mindfulness prompts using JWT-based auth, scalable MongoDB storage, and responsive UI with React.</p>
         </a>
 
-        <a href="https://your-memora-project-link.com" target="_blank" class="project-card">
+        <a href="#" target="_blank" class="project-card" data-category="web">
             <h3>Memora <span class="subtitle">– AI-powered Flashcard App</span></h3>
             <div class="tags">
             <span>Flask</span><span>React</span><span>SQLite</span><span>Gemini API</span><span>Docker</span><span>Railway</span><span>GitHub Actions</span>
             </div>
-            <p>
-            Built a personalized spaced repetition system integrating AI-generated summaries and visual aids, with CI/CD via GitHub Actions for automatic deployment and testing on Railway.
-            </p>
+            <p>A personalized spaced repetition system integrating AI-generated summaries and visual explanations, integrating CI/CD pipeline using GitHub Actions for automatic deployment and testing on Railway.</p>
         </a>
 
-        <a href="https://your-ava-project-link.com" target="_blank" class="project-card">
+        <a href="#" target="_blank" class="project-card" data-category="web">
             <h3>Ava <span class="subtitle">– AI Technical Interviewer</span></h3>
             <div class="tags">
-            <span>FastAPI</span><span>Next.js</span><span>Supabase</span><span>PostgreSQL</span><span>Gemini API</span>
+            <span>FastAPI</span><span>Next.js</span><span>Supabase</span><span>Gemini API</span>
             </div>
-            <p>
-            Cloud-native mock interview platform using OpenAI and Gemini APIs, with FastAPI backend and Supabase auth, deployed serverlessly via AWS Lambda for scalable real-time user sessions.
-            </p>
+            <p>An AI-driven mock interview platform using OpenAI and Gemini APIs with FastAPI backend, Supabase auth, and serverless AWS Lambda deployment - offering real-time, scalable interview practice for users. </p>
         </a>
 
-        <a href="https://your-flow-project-link.com" target="_blank" class="project-card">
+        <a href="#" target="_blank" class="project-card" data-category="web">
             <h3>Flow <span class="subtitle">– Task Management App</span></h3>
             <div class="tags">
             <span>Flask</span><span>React</span><span>SQLite</span><span>Gemini API</span><span>Railway</span><span>Vercel</span>
             </div>
-            <p>
-            Full-stack productivity tool with timers and experiment tracking to help users analyze scheduling patterns and improve task estimation accuracy.
+            <p>A full-stack productivity app with integrated timers and experiment tracking to help users monitor task durations and scheduling patterns, enhancing task estimation and time management accuracy.</p>
+        </a>
+
+        <a href="#" target="_blank" class="project-card" data-category="data">
+            <h3>Vietnamese Handwriting <span class="subtitle">– ML Classification & Generation Models</span></h3>
+            <div class="tags">
+            <span>PyTorch</span><span>Tensorflow</span><span>Numpy</span>
+            </div>
+            <p>Trained and fine-tuned 10+ machine learning models including multilayer perceptron, convolutional neural nets (CNNs), Res-Net, VCG-16 to classify 13 classes of Vietnamese handwriting and GANs
+                to generate handwriting similar to my style.
+            </p>
+        </a>
+
+        <a href="#" target="_blank" class="project-card" data-category="algorithms">
+            <h3>Benchmarking Sorting Algorithms <span class="subtitle">– Time & Space Complexity</span></h3>
+            <div class="tags">
+            <span>Python</span>
+            </div>
+            <p> Implemented 10 basic and advanced sorting algorithms and benchmarked their performance in time and space using Python. Provided
+                data-driven explanation for when to which algorithms.
             </p>
         </a>
 
@@ -68,5 +88,29 @@
 
     </div>
   </div>
+  <script>
+    const filterButtons = document.querySelectorAll('#project-filters button');
+    const projects = document.querySelectorAll('.project-card');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+        // Set active class
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const filter = button.getAttribute('data-filter');
+
+        projects.forEach(project => {
+            const categories = project.getAttribute('data-category').split(' ');
+            if (filter === 'all' || categories.includes(filter)) {
+            project.style.display = 'block';
+            } else {
+            project.style.display = 'none';
+            }
+        });
+        });
+    });
+    </script>
+
 </body>
 </html>
