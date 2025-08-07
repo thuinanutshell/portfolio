@@ -9,15 +9,7 @@
 </head>
 <body>
   <div id="main-container">
-    <div id="header-container">
-      <div id="navbar">
-        <a href="index.html">about</a>
-        <a href="projects.html">projects</a>
-        <a href="blog.html">blog</a>
-        <a href="gallery.html">gallery</a>
-        <a class="active" href="stuff.html">stuff</a>
-      </div>
-    </div>
+    <div id="header-container"></div>
 
     <div id="stuff-page">
       <section class="stuff-section">
@@ -48,5 +40,8 @@
       </section>
     </div>
   </div>
+  <script type="module">
+    import { loadNavbar } from './js/navbar.js';
+  </script>
 </body>
 </html>
