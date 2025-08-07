@@ -1,31 +1,26 @@
 const texts = ["vietnam", "san francisco", "seoul", "berlin", "buenos aires"];
-const textSpan = document.getElementById("text");
 let wordIndex = 0;
 let charIndex = 0;
 
-function typeLetter() {
+export function typeLetter(textSpan) {
   const currentWord = texts[wordIndex];
-  
+
   if (charIndex < currentWord.length) {
     textSpan.textContent += currentWord.charAt(charIndex);
     charIndex++;
-    setTimeout(typeLetter, 150);
+    setTimeout(() => typeLetter(textSpan), 150);
   } else {
-    setTimeout(() => {
-      eraseLetter();
-    }, 1000); // Wait before erasing
+    setTimeout(() => eraseLetter(textSpan), 1000);
   }
 }
 
-function eraseLetter() {
+function eraseLetter(textSpan) {
   if (charIndex > 0) {
     textSpan.textContent = textSpan.textContent.slice(0, -1);
     charIndex--;
-    setTimeout(eraseLetter, 100);
+    setTimeout(() => eraseLetter(textSpan), 100);
   } else {
     wordIndex = (wordIndex + 1) % texts.length;
-    setTimeout(typeLetter, 300);
+    setTimeout(() => typeLetter(textSpan), 300);
   }
 }
-
-window.onload = typeLetter;

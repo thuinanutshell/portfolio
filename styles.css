@@ -358,3 +358,144 @@ h2 {
   margin-bottom: 0.75rem;
   line-height: 1.6;
 }
+
+/* Blog post specific styles */
+#blog-post-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  line-height: 1.7;
+  color: #333;
+}
+
+/* Ensure markdown content uses Be Vietnam Pro */
+.markdown-body {
+  font-family: 'Be Vietnam Pro', sans-serif !important;
+}
+
+/* Blog post typography */
+.markdown-body h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #789DBC;
+  margin-bottom: 0.5rem;
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.markdown-body h2 {
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: #2c3e50;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #e1e4e8;
+  padding-bottom: 0.5rem;
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.markdown-body h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+/* Improve paragraph spacing and readability */
+.markdown-body p {
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+  font-size: 1.1rem;
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+/* Code block styling with Be Vietnam Pro fallback */
+.markdown-body pre {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  overflow-x: auto;
+  border: 1px solid #e9ecef;
+  margin: 1.5rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.markdown-body code {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.5em;
+  background-color: #f8f9fa;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
+}
+
+/* Pre code blocks should use monospace */
+.markdown-body pre code {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+
+/* Date styling */
+.markdown-body p:first-of-type strong {
+  color: #6c757d;
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Add some breathing room */
+.markdown-body > *:first-child {
+  margin-top: 0;
+}
+
+.markdown-body > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Improve list styling */
+.markdown-body ul, .markdown-body ol {
+  margin: 1.5rem 0;
+  padding-left: 2rem;
+  font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.markdown-body li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+/* Add subtle styling for inline code in text */
+.markdown-body p code, 
+.markdown-body li code {
+  background-color: #f1f3f5;
+  color: #e83e8c;
+  font-weight: 500;
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  #blog-post-container {
+    padding: 0 1rem;
+  }
+  
+  .markdown-body h1 {
+    font-size: 2rem;
+  }
+  
+  .markdown-body h2 {
+    font-size: 1.5rem;
+  }
+  
+  .markdown-body p {
+    font-size: 1rem;
+  }
+  
+  .markdown-body pre {
+    padding: 1rem;
+    margin: 1rem -1rem;
+    border-radius: 0;
+  }
+}

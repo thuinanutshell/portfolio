@@ -10,13 +10,7 @@
 </head>
 <body>
     <div id="main-container">
-        <div id="navbar">
-            <a class="active" href="index.html">about</a>
-            <a href="projects.html">projects</a>
-            <a href="blog.html">blog</a>
-            <a href="gallery.html">gallery</a>
-            <a href="stuff.html">stuff</a>
-        </div>
+        <!-- Navbar will be loaded here by JavaScript -->
         <div id="header-container">
             <h1>thu (joy) than</h1>
             <h2 id="typed-text">@ <span id="text"></span><span id="cursor">_</span></h2>
@@ -47,6 +41,17 @@
             </a>
         </div>
     </div>
-    <script src="script.js"></script>
+    
+    <script type="module">
+        import { loadNavbar } from './js/navbar.js';
+        import { typeLetter } from './js/typing.js';
+
+        loadNavbar();
+
+        const textSpan = document.getElementById('text');
+        if (textSpan) {
+            typeLetter(textSpan);
+        }
+    </script>
 </body>
 </html>
